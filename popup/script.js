@@ -30,23 +30,46 @@ document.addEventListener('DOMContentLoaded', async function() {
             let name = document.createElement('p')
             name.innerText = groups[i].name
 
-            let button = document.createElement('button')
-            button.innerText = 'Load'
-            button.id = 'group-'+ i
+            let vr = document.createElement('div')
+            vr.setAttribute('class', 'vr')
+
+            let loadimg = document.createElement('img')
+            loadimg.src = '/assets/icons/load.png'
+            let loadbutton = document.createElement('button')
+            loadbutton.setAttribute('class', 'circle small')
+            loadbutton.id = 'group-'+ i+ '-load'
+            loadbutton.append(loadimg)
+
+            let delimg = document.createElement('img')
+            delimg.src = '/assets/icons/trash-lines.png'
+            let delbutton = document.createElement('button')
+            delbutton.setAttribute('class', 'circle small')
+            delbutton.id = 'group-'+ i+ '-del'
+            delbutton.append(delimg)
 
             d.append(name)
-            d.append(button)
+            d.append(vr)
+            d.append(loadbutton)
+            d.append(delbutton)
             d.setAttribute('class', 'tabGroup')
             
             tabDiv.append(d)
 
-            document.getElementById('group-'+ i).addEventListener('click', async () => {
+            document.getElementById('group-'+ i+ '-load').addEventListener('click', async () => {
                 storage = await browser.storage.sync.get();
                 groups = storage.tabGroups;
 
                 var urls = groups[i].urls;
 
                 browser.windows.create({ url: urls })
+            })
+
+            document.getElementById('group-'+ i+ '-del').addEventListener('click', async () => {
+                storage = await browser.storage.sync.get();
+                storage.tabGroups.splice(i, 1);
+
+                browser.storage.sync.set(storage);
+                loadGroups()
             })
         }
     }
