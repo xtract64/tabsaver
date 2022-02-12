@@ -1,0 +1,108 @@
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+* {
+    font-family: arial;
+    color: white;
+}
+
+body {
+    background-color: #0a0a0a;
+    width: 375px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+button, input {
+    background-color: #ff0000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+button:hover, input:hover, input:active {
+    background-color: #ff1d1d;
+    cursor: pointer;
+}
+
+button.circle {
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+
+    border-radius: 50%;
+}
+
+button.circle img {
+    animation: 'spin' 4 linear 0 infinite;
+    animation-play-state: paused; 
+}
+
+button.circle:hover img {
+    animation-play-state: running; 
+}
+
+#version {
+    color: gray;
+    font-size: 10px;
+}
+
+#saved-tabs  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+}
+
+#tabs {
+    gap: 10px;
+}
+
+#tabs, .tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.tabs {
+    /* background-color: #353535; */
+    border-radius: 5px;
+    padding: 15px;
+    width: inherit;
+}
+
+.tabs p {
+    margin: 0;
+}
+
+.tabGroup {
+    background-color: #0f0f0f /* #202020 */ ;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-radius: 5px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.tabGroup p {
+    margin: 0;
+}

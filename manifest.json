@@ -1,0 +1,34 @@
+{
+
+  "manifest_version": 2,
+  "name": "Tab Saver",
+  "version": "1.0.0",
+
+  "description": "Allows you to easily save your tabs so that you dont have as many open at a time",
+  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+  "icons": {
+    "32": "assets/icons/tabsaver-32.png"
+  },
+
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+
+  "browser_action": {
+    "default_icon": "assets/icons/tabsaver-32.png",
+    "default_title": "TabSaver",
+    "default_popup": "popup/tabsaver.html"
+  },
+
+  "web_accessible_resources": [],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tabsaver@xtract.space",
+      "strict_min_version": "52.0"
+    }
+  }
+  
+
+}
