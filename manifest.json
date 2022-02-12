@@ -26,7 +26,7 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "tabsaver@xtract.space",
-      "strict_min_version": "52.0"
+      "strict_min_version": "57.0"
     }
   }
   

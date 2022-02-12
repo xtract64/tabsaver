@@ -26,10 +26,16 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         for (let i = 0; i < groups.length; i++) {
             let d = document.createElement('div')
-            d.innerHTML = `
-                <p>${groups[i].name}</p>
-                <button id="group-${i}">Load</button>
-            `
+            
+            let name = document.createElement('p')
+            name.innerText = groups[i].name
+
+            let button = document.createElement('button')
+            button.innerText = 'Load'
+            button.id = 'group-'+ i
+
+            d.append(name)
+            d.append(button)
             d.setAttribute('class', 'tabGroup')
             
             tabDiv.append(d)
