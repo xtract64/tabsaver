@@ -15,7 +15,7 @@
     "storage"
   ],
 
-  "browser_action": {
+  "action": {
     "default_icon": "assets/icons/tabsaver-32-light.png",
     "default_title": "TabSaver",
     "default_popup": "popup/tabsaver.html"
