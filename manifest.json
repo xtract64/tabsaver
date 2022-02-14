@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Tab Saver",
-  "version": "1.0.2",
+  "version": "1.0.3",
 
   "description": "Allows you to easily save your tabs so that you dont have as many open at a time",
   "homepage_url": "https://github.com/AnyMinorDeerPanda/tabsaver",
